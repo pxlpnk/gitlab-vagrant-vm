@@ -1,5 +1,5 @@
 # Include cookbook dependencies
-%w{ rbenv::default rbenv::ruby_build gitlab::gitlab_shell build-essential
+%w{ rbenv::default rbenv::ruby_build build-essential
     readline openssh xml zlib python::package python::pip
     redisio::install redisio::enable }.each do |requirement|
   include_recipe requirement
@@ -24,6 +24,8 @@ node['gitlab']['ruby_version'].tap do |rb_version|
     ruby_version rb_version
   end
 end
+
+include_recipe "gitlab::gitlab_shell"
 
 # Install sshkey gem into chef
 chef_gem "sshkey" do
