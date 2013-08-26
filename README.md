@@ -130,8 +130,9 @@ $ sudo /etc/init.d/xvfb stop
 $ sudo /etc/init.d/xvfb start
 ```
 
-* Install a new Ruby: `rbenv install 2.0.0-p247`
-* Switch to a different Ruby: `rbenv global 2.0.0-p247`
+
+* Install another Ruby: `rbenv install 1.9.3-p448`
+* Switch to a different Ruby: `rbenv global 1.9.3-p448`
 
 Updating
 ---------------

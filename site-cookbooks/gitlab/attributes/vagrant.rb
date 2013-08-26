@@ -18,7 +18,7 @@ default['gitlab']['packages'] = %w{
   xvfb xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic
 }
 
-default['gitlab']['ruby_version'] = '1.9.3-p448'
+default['gitlab']['ruby_version'] = '2.0.0-p247'
 default['rbenv']['user'] = default['gitlab']['user']
 default['rbenv']['group'] = default['gitlab']['group']
 
