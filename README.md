@@ -13,16 +13,19 @@ Requirements
 ------------
 
 * [VirtualBox](https://www.virtualbox.org)
-* [Vagrant](http://vagrantup.com)
+* [Vagrant 1.2.x](http://vagrantup.com)
 * the NFS packages. Already there if you are using Mac OS, and
   not necessary if you are using Windows. On Linux:
 
-```bash
-$ sudo apt-get install nfs-kernel-server nfs-common portmap
-```
-On OS X you can also choose to use [the (commercial) Vagrant VMware Fusion plugin](http://www.vagrantup.com/vmware) instead of VirtualBox.
+    ```bash
+    $ sudo apt-get install nfs-kernel-server nfs-common portmap
+    ```
+    On OS X you can also choose to use [the (commercial) Vagrant VMware Fusion plugin](http://www.vagrantup.com/vmware) instead of VirtualBox.
 
 * some patience :)
+
+**Note:** Make sure to use Vagrant v1.2.x. Do not install via rubygems.org as there exists an old gem
+which will probably cause errors. Instead, grab the latest version from http://downloads.vagrantup.com/.
 
 Installation
 ------------
