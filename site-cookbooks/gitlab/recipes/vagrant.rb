@@ -67,11 +67,8 @@ git node['gitlab']['app_home'] do
   user 'root'
 end
 
-# Create tmp/repositories/
-#
-# Uses host user/group id to workaround Vagrant's inability to set the NFS
-# share on the virtual machine to the vagrant user.
-directory "#{node['gitlab']['app_home']}/tmp/repositories" do
+# Create /vagrant/repositories to be used as repositories folder
+directory node['gitlab']['repos_path'] do
   owner node['gitlab']['host_user_id']
   group node['gitlab']['host_group_id']
   mode "0755"
@@ -79,8 +76,8 @@ directory "#{node['gitlab']['app_home']}/tmp/repositories" do
   action :create
 end
 
-# Create /vagrant/repositories to be used as repositories folder
-directory node['gitlab']['repos_path'] do
+# Create /vagrant/gitlab-satellites to be used as satellites folder
+directory node['gitlab']['repos_satellites'] do
   owner node['gitlab']['host_user_id']
   group node['gitlab']['host_group_id']
   mode "0755"

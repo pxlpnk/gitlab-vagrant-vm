@@ -4,3 +4,4 @@ gitlabhq/
 gitlab-shell/
 repositories/
 .vagrant
+gitlab-satellites/
