@@ -68,6 +68,11 @@ $ cd /vagrant/gitlabhq/
 $ bundle exec rake gitlab:test
 ```
 
+Start the Gitlab app:
+```bash
+$ bundle exec foreman start
+```
+
 You should also configure your own remote since by default it's going to grab
 gitlab's master branch.
 
@@ -122,7 +127,9 @@ Information
 -----------
 
 * Virtual Machine IP: 192.168.3.14
-* User/password: vagrant/vagrant
+* Virtual Machine user/password: vagrant/vagrant
+* GitLab webapp running at: http://192.168.3.14:3000/
+* GitLab webapp user/password: admin@local.host/5iveL!fe
 * MySQL user/password: vagrant/Vagrant
 * MySQL root password: nonrandompasswordsaregreattoo
 * Xvfb is used as a service and it should be already running, but in case you
