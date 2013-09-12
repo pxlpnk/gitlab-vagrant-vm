@@ -160,3 +160,24 @@ $ cd gitlabhq && git pull --ff origin master
 ```
 
 A bit of background on why this is needed. When you run 'vagrant up' there is a [checkout action in the recipe](https://github.com/gitlabhq/gitlab-vagrant-vm/blob/master/site-cookbooks/gitlab/recipes/vagrant.rb#L54) that [points to](https://github.com/gitlabhq/gitlab-vagrant-vm/blob/master/site-cookbooks/gitlab/attributes/vagrant.rb#L10) the [gitlabhq repo](https://github.com/gitlabhq/gitlabhq). You won't see any difference when running 'git status' in the gitlab-vagrant-vm repo because gitlabhq/ is in the [.gitignore](https://github.com/gitlabhq/gitlab-vagrant-vm/blob/master/.gitignore). You can update the gitlabhq repo yourself or remove the gitlabhq directory so the repo is checked out again.
+
+Troubleshooting
+---------------
+### unknown keyword "no_subtree"
+
+Vagrant version 1.3.1 has a bug that prevents guest VM to be mounted.
+The error output:
+
+```
+[default] Exporting NFS shared folders...
+Preparing to edit /etc/exports. Administrator privileges will be required...
+nfsd running
+exportfs: /etc/exports:1: unknown keyword "no_subtree"
+
+[default] Mounting NFS shared folders...
+The following SSH command responded with a non-zero exit status.
+Vagrant assumes that this means the command failed!
+
+mount -o 'vers=3,udp' 192.168.3.1:'/tmp/gitlab-vagrant-vm' /vagrant
+```
+[Fix is already provided](https://github.com/mitchellh/vagrant/pull/2156) in the master branch of vagrant repository. Use the version from master or newer release that contains the fix.
