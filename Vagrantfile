@@ -13,7 +13,7 @@ Vagrant::Config.run do |config|
   host_group_id = 1000
 
   if RUBY_PLATFORM =~ /linux|darwin/
-    config.vm.share_folder("v-root", "/vagrant", ".", :nfs => true)
+    config.vm.share_folder("vagrant-root", "/vagrant", ".", :nfs => true)
     host_user_id = Process.euid
     host_group_id = Process.egid
   end
