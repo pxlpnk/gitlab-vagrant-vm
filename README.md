@@ -82,6 +82,11 @@ $ # or if you prefer set up your origin as your own repository
 $ git remote set-url origin git://github.com/me/gitlabhq.git
 ```
 
+OpenLdap
+--------
+
+If you need to setup OpenLDAP in order to test the functionality you can use the [basic OpenLDAP setup guide](OpenLDAP.md)
+
 Virtual Machine Management
 --------------------------
 
