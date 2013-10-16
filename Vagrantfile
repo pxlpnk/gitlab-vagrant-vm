@@ -65,5 +65,9 @@ Vagrant.configure("2") do |config|
     config.vm.provider :virtualbox do |v, override|
         v.customize ["modifyvm", :id, "--memory", MEMORY.to_i]
         v.customize ["modifyvm", :id, "--cpus", CORES.to_i]
+
+        if CORES.to_i > 1
+          v.customize ["modifyvm", :id, "--ioapic", "on"]
+        end
     end
 end
