@@ -23,6 +23,8 @@ Vagrant::Config.run do |config|
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = ['cookbooks', 'site-cookbooks']
 
+    chef.add_recipe('apt::default')
+
     chef.add_recipe('mysql::server')
     chef.add_recipe('mysql::ruby')
 

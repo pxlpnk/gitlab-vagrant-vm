@@ -48,6 +48,7 @@ SITE
     zlib (1.0.0)
 
 DEPENDENCIES
+  apt (>= 0)
   build-essential (>= 0)
   database (>= 0)
   git (>= 0)
