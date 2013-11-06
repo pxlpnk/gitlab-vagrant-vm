@@ -18,7 +18,7 @@ Vagrant::Config.run do |config|
     host_group_id = Process.egid
   end
 
-  config.vm.provision :shell, :inline => "gem install chef --version '~> 11' --no-rdoc --no-ri --conservative"
+  config.vm.provision :shell, :inline => "gem install chef --version '~> 11.6.0' --no-rdoc --no-ri --conservative"
 
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = ['cookbooks', 'site-cookbooks']
