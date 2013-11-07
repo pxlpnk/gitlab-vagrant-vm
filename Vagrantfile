@@ -7,13 +7,14 @@ Vagrant::Config.run do |config|
   config.vm.box = "precise32"
   config.vm.box_url = "http://files.vagrantup.com/precise32.box"
   config.vm.network :hostonly, '192.168.3.14'
+  config.ssh.forward_agent = true
 
   # Default user/group id for vagrant in precise32
   host_user_id = 1000
   host_group_id = 1000
 
   if RUBY_PLATFORM =~ /linux|darwin/
-    config.vm.share_folder("vagrant-root", "/vagrant", ".", :nfs => true)
+    config.vm.share_folder("vagrant-root", "/vagrant", ".")
     host_user_id = Process.euid
     host_group_id = Process.egid
   end
